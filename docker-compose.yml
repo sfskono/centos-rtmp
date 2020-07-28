@@ -1,0 +1,12 @@
+version: '3'
+services:
+ nginx-hls:
+  container_name: app-v1
+  build: .
+  ports:
+    - "10080:80"
+    - "1935:1935"
+  volumes:
+    - ./logs:/usr/local/nginx/logs
+    - ./html:/var/www/html
+  #tty: true
